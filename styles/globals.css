@@ -36,3 +36,28 @@ body::after {
 .animate-scroll {
   animation: scroll linear infinite;
 }
+@keyframes cloudMove {
+  0% {
+    translate: -200px 0;  /* instead of transform */
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    translate: 100vw 0;
+    opacity: 1;
+  }
+}
+
+.cloud {
+  animation: cloudMove var(--speed, 15s) linear infinite;
+  animation-fill-mode: backwards;
+  transition: scale 0.3s ease, translate 0.3s ease, opacity 0.3s ease;
+}
+
+.cloud:hover {
+  translate: 50px -20px; /* additive on top of keyframes */
+  scale: 1.1;
+  opacity: 0.8;
+}

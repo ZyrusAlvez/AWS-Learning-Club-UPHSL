@@ -12,7 +12,7 @@ const Slideshow = () => {
   ];
 
   const [current, setCurrent] = useState(0);
-
+  
   // Auto change slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
