@@ -38,26 +38,26 @@ body::after {
 }
 @keyframes cloudMove {
   0% {
-    translate: -200px 0;  /* instead of transform */
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
+    translate: 0vw 0;  /* instead of transform */
   }
   100% {
     translate: 100vw 0;
-    opacity: 1;
   }
 }
 
-.cloud {
-  animation: cloudMove var(--speed, 15s) linear infinite;
-  animation-fill-mode: backwards;
-  transition: scale 0.3s ease, translate 0.3s ease, opacity 0.3s ease;
+
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-58%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
-.cloud:hover {
-  translate: 50px -20px; /* additive on top of keyframes */
-  scale: 1.1;
-  opacity: 0.8;
+.animate-marquee {
+  animation: marquee 80s linear infinite;
 }
+

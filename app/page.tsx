@@ -5,8 +5,8 @@ import CloudDivider from "@/component/CloudDivider"
 
 const HeroSection = () => {
   return (
-    <div>
-        <div className='h-screen w-full flex items-center justify-between gap-4 px-8 pt-8 pb-2'>
+    <div className="flex flex-col">
+        <div className='h-screen w-full flex items-center justify-between gap-4 px-8 py-2'>
           <main className='flex flex-col text-white ml-4 gap-2'>
             <h1 className='text-5xl font-bold'><span className='text-[#ffa23f] font-extrabold'>AWS</span> Learning Club</h1>
             <h2 className='text-lg  font-bold'>University of Perpetual Help System Laguna - Biñan</h2>
@@ -18,10 +18,9 @@ const HeroSection = () => {
             <SlideShow />
           </div>
         </div>
-        <div>
+        <div className="-mt-[20%] relative z-10">
           <CloudDivider></CloudDivider>
         </div>
-        <div className="h-64"><br /><br /></div>
     </div>
   
   )
