@@ -25,7 +25,7 @@ const Slideshow = () => {
   }, [images.length]);
 
   return (
-    <div className="relative w-[500px] h-[300px] overflow-hidden rounded-2xl">
+    <div className="relative w-[80%] h-[55%] overflow-hidden rounded-2xl">
       {images.map((src, i) => (
         <div
           key={i}
