@@ -6,7 +6,7 @@ import firstPic from "@/public/carousel/1.webp";
 import secondPic from "@/public/carousel/2.webp";
 import thirdPic from "@/public/carousel/3.webp";
 import fourthPic from "@/public/carousel/4.webp";
-const Slideshow = () => {
+const SlideShow = () => {
   const images = [
     firstPic,
     secondPic,
@@ -45,4 +45,4 @@ const Slideshow = () => {
   );
 };
 
-export default Slideshow;
+export default SlideShow;

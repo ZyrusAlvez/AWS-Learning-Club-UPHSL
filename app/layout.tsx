@@ -4,7 +4,7 @@ import Header from '../component/Header'
 export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="w-screen h-screen">
+      <body className="w-screen">
         <Header />
         {children}
       </body>
