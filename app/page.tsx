@@ -1,12 +1,13 @@
-import Button from "../component/ui/Button"
-import SlideShow from "../component/Hero Section/SlideShow"
-import CloudDivider from "@/component/Hero Section/CloudDivider"
 import HeroSection from "../component/HeroSection"
+import Team from "@/component/Team";
 
 
 const Page = () => {
   return (
-    <HeroSection />
+    <>
+      <HeroSection />
+      <Team />
+    </>
   )
 }
 

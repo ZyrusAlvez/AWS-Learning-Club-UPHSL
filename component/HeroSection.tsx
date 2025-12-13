@@ -1,4 +1,4 @@
-import Button from "./ui/Button"
+import Button from "./UI/Button"
 import SlideShow from "./Hero Section/SlideShow"
 import CloudDivider from "./Hero Section/CloudDivider"
 
