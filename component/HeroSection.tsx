@@ -5,7 +5,7 @@ import CloudDivider from "./Hero Section/CloudDivider"
 const HeroSection = () => {
   return (
     <div className="flex flex-col">
-        <div className='h-screen w-screen flex flex-col-reverse md:flex-row md:items-center md:justify-between md:gap-4 md:px-8 md:py-2'>
+        <div className='h-screen flex flex-col-reverse md:flex-row md:items-center md:justify-between md:gap-4 md:px-8 md:py-2'>
           <main className='flex flex-col text-white ml-4 gap-2'>
             <h1 className='text-5xl font-bold'><span className='text-[#ffa23f] font-extrabold'>AWS</span> Learning Club</h1>
             <h2 className='text-lg  font-bold'>University of Perpetual Help System Laguna - Biñan</h2>
