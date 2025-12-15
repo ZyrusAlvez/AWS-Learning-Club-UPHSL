@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Button from "./UI/Button";
 import TextButton from "./UI/TextButton";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
+
   return (
     <header className='h-[80px] w-full fixed bg-black/20 backdrop-blur-sm z-50 hidden md:block'>
       <div className="flex items-center h-full p-8 justify-between">
@@ -15,7 +20,7 @@ const Header = () => {
           <TextButton>Events</TextButton>
           <TextButton>The Team</TextButton>
           <TextButton>Contact Us</TextButton>
-          <Button>Join Us</Button>
+          <Button onClick={() => router.push("/membership")}>Join Us</Button>
         </div>
       </div>
     </header>
