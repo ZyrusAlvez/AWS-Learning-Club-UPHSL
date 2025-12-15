@@ -1,4 +1,4 @@
-import HeroSection from "../component/HeroSection"
+import HeroSection from "../component/Hero"
 import Team from "@/component/Team";
 
 const Page = () => {
