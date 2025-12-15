@@ -5,7 +5,7 @@ const Contact_Us = () => {
   return (
       <div id="contact_us" className="w-full flex flex-col items-center justify-center text-white">
         <Title />
-        <div className="flex justify-center items-center flex-wrap gap-16 mt-16">
+        <div className="flex justify-center items-center flex-wrap gap-16 mt-8">
           <Card
             title="Email"
             subtitle="We'd love to here from you! Reach out anytime."
