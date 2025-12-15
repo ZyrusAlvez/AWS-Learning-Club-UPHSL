@@ -1,15 +1,13 @@
-import { HiH1 } from "react-icons/hi2"
-
 const Title = () => {
   return (  
     <div className="flex flex-col items-center gap-2">
 
       <div className="flex gap-x-2 px-4 w-full items-center">
-        <div className="border border-[#ffa23f] w-1/2"/>
+        <div className="border border-[#FFA500] w-1/2"/>
           <h1 className="text-5xl font-bold whitespace-nowrap">
-            Meet our <span className="text-[#ffa23f]">Team</span>
+            Meet our <span className="text-[#FFA500]">Team</span>
           </h1>  
-        <div className="border border-[#ffa23f] w-1/2"/>
+        <div className="border border-[#FFA500] w-1/2"/>
       </div>
 
       <h1 className="text-center max-w-[800px] sm:text-lg">
