@@ -5,6 +5,7 @@ import Card from "./Team/Card"
 import Pagination from "./UI/Pagination";
 import Arrow_Left from "./UI/ArrowLeft";
 import Arrow_Right from "./UI/ArrowRight";
+import Title from "@/component/Team/Title"
 
 interface TeamMember {
   img: string;
@@ -190,17 +191,8 @@ const Team: React.FC = () => {
     return baseTranslate;
   };
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col justify-center items-center gap-2 mb-8 sm:mb-12">
-        <h1 className="text-pink text-3xl sm:text-4xl xl:text-5xl font-bold text-center">
-          Meet Our Team
-        </h1>
-        <h2 className="text-white text-center max-w-[800px] sm:text-lg">
-          Our team is made up of cloud experts, experienced trainers, and
-          passionate community builders who are dedicated to helping you succeed
-          in your AWS journey
-        </h2>
-      </div>
+    <div className="flex flex-col gap-4">
+      <Title />
 
       <div className="relative w-full">
         <div className="overflow-hidden">
@@ -240,7 +232,7 @@ const Team: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-4 px-4 sm:px-8">
+      <div className="flex justify-between items-center px-4 sm:px-8">
         <Pagination
           count={teamMembers.length}
           currentPage={
