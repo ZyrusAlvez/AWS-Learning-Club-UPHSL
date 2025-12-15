@@ -1,12 +1,14 @@
-import HeroSection from "../component/Hero"
+import HeroSection from "@/component/Hero"
 import Team from "@/component/Team";
+import About from "@/component/About"
 
 const Page = () => {
   return (
-    <>
+    <div className="flex flex-col gap-4">
       <HeroSection />
-      <Team />
-    </>
+      <About />
+      <Team />     
+    </div>
   )
 }
 
