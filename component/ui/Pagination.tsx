@@ -15,7 +15,7 @@ const Pagination = ({ count, currentPage, onPageChange }: Props) => {
           onClick={() => onPageChange(index)}
           className={`w-2 h-2 rounded-full transition-all duration-300 ease-in-out
             ${currentPage === index 
-              ? 'bg-pink scale-125' 
+              ? 'bg-[#ffa23f] scale-125' 
               : 'bg-white'
             }
           `}

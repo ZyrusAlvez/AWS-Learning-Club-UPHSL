@@ -20,7 +20,7 @@ const Team_Card: React.FC<TeamCardProps> = ({ img, name, title, subtitle, classN
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none"></div>
         <Image className="w-full h-full object-cover" src={img} alt={name} width={256} height={208} />
       </div>
-      <h1 className="font-bold text-xl mb-2 text-[#ffa500]">{name}</h1>
+      <h1 className="font-bold text-xl mb-2 text-[#ffa23f]">{name}</h1>
       <h2 className="text-lg mb-1">{title}</h2>
       <h3 className="mb-2">{subtitle}</h3>
       <div className="flex text-pink cursor-pointer text-2xl gap-4">
