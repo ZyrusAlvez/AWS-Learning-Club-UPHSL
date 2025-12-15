@@ -4,13 +4,30 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 
 const MembershipForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    middleName: '',
+    age: '',
+    contactNumber: '',
+    facebookLink: '',
+    personalEmail: '',
+    schoolEmail: '',
+    program: '',
+    yearSection: '',
+    interest: ''
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
 
   return (
     <div className="min-h-screen py-8 px-4 flex flex-col items-center gap-4">
       <Image src="/awslc banner.jpg" alt="AWS Learning Club - UPHSL Banner" width={672} height={150} className='rounded-lg'/>
       <div className="max-w-2xl mx-auto">
 
-          <div className='rounded-t-md border-t-8 border-[#b21b6e] bg-[#b21b6e]'/>
+          <div className='rounded-t-md border-t-8 border-[#ffa23f] bg-[#ffa23f]'/>
           <div className="bg-white/10 backdrop-blur-sm shadow-xl p-8 border border-white/20">
             <div className="text-center">
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold'><span className='text-[#ffa23f] font-extrabold'>AWS</span> Learning Club</h1>
@@ -25,18 +42,64 @@ const MembershipForm = () => {
             </div>
           </div>
 
-          <div className='rounded-t-md border-[#b21b6e] bg-[#b21b6e] mt-12 font-bold text-white text-lg px-4 py-2'>
+          <div className='rounded-t-md border-[#ffa23f] bg-[#ffa23f] mt-8 font-bold text-white/80 text-lg px-4 py-2'>
             Personal Information
           </div>
           <div className="bg-white/10 backdrop-blur-sm shadow-xl p-8 border border-white/20">
-            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-white font-medium mb-2">First Name *</label>
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Last Name *</label>
+                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Middle Name</label>
+                <input type="text" name="middleName" value={formData.middleName} onChange={handleChange} placeholder="Leave blank if none" className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Age *</label>
+                <input type="number" name="age" value={formData.age} onChange={handleChange} required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Contact Number *</label>
+                <input type="tel" name="contactNumber" value={formData.contactNumber} onChange={handleChange} required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Facebook Link *</label>
+                <input type="url" name="facebookLink" value={formData.facebookLink} onChange={handleChange} required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-white font-medium mb-2">Personal Email *</label>
+                <input type="email" name="personalEmail" value={formData.personalEmail} onChange={handleChange} required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+            </div>
           </div>
 
-          <div className='rounded-t-md border-[#b21b6e] bg-[#b21b6e] mt-12 font-bold text-white text-lg px-4 py-2'>
+          <div className='rounded-t-md border-[#ffa23f] bg-[#ffa23f] mt-8 font-bold text-white/80 text-lg px-4 py-2'>
             Educational Background
           </div>
           <div className="bg-white/10 backdrop-blur-sm shadow-xl p-8 border border-white/20">
-            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="md:col-span-2">
+                <label className="block text-white font-medium mb-2">School Email *</label>
+                <input type="email" name="schoolEmail" value={formData.schoolEmail} onChange={handleChange} required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Program *</label>
+                <input type="text" name="program" value={formData.program} onChange={handleChange} placeholder="ex. BSCS - DS / BSIT - GD" required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Year and Section for A.Y. '25-'26 *</label>
+                <input type="text" name="yearSection" value={formData.yearSection} onChange={handleChange} placeholder="ex. J3A" required className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]" />
+              </div>
+              <div className="md:col-span-2">
+                <label className="block text-white font-medium mb-2">Interest</label>
+                <textarea name="interest" value={formData.interest} onChange={handleChange} rows={3} className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f] resize-none" />
+              </div>
+            </div>
           </div>
         
           <div className="mt-6 text-center text-sm text-white/70">
