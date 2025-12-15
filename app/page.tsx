@@ -6,7 +6,9 @@ const Page = () => {
   return (
     <>
       <HeroSection />
-      <Team />
+      <div>
+        hello world
+      </div>
     </>
   )
 }
