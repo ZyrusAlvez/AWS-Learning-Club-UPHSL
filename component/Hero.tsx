@@ -9,7 +9,10 @@ const HeroSection = () => {
           <main className='flex flex-col text-white ml-4 gap-2'>
             <h1 className='text-5xl font-bold'><span className='text-[#ffa23f] font-extrabold'>AWS</span> Learning Club</h1>
             <h2 className='text-lg  font-bold'>University of Perpetual Help System Laguna - Biñan</h2>
-            <Button variant="purple" className="w-[250px] mt-4">Join Our Community</Button>
+            <div className="flex gap-4">
+              <Button variant="purple" className="w-[250px] mt-4">Join Our Community</Button>
+              <Button variant="orange" className="w-[200px] mt-4">Verify</Button>
+            </div>
           </main>
           {/* slide show */}
           <div className="md:w-[50%] w-full h-[100%] min-h-[240px] flex flex-col justify-center items-center ">
