@@ -18,8 +18,30 @@ const MembershipForm = () => {
     interest: ''
   })
 
+  const [privacyAcknowledged, setPrivacyAcknowledged] = useState(false)
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    const requiredFields = ['firstName', 'lastName', 'age', 'contactNumber', 'facebookLink', 'personalEmail', 'schoolEmail', 'program', 'yearSection']
+    const emptyFields = requiredFields.filter(field => !formData[field as keyof typeof formData].trim())
+    
+    if (emptyFields.length > 0) {
+      alert('Please fill in all required fields.')
+      return
+    }
+    
+    if (!privacyAcknowledged) {
+      alert('Please acknowledge the privacy policy before submitting.')
+      return
+    }
+    
+    console.log('Form submitted:', formData)
+    alert('Application submitted successfully!')
   }
 
   return (
@@ -100,6 +122,33 @@ const MembershipForm = () => {
                 <textarea name="interest" value={formData.interest} onChange={handleChange} rows={3} className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f] resize-none" />
               </div>
             </div>
+          </div>
+
+          
+          <div className="bg-white/10 backdrop-blur-sm shadow-xl p-8 border border-white/20 mt-8">
+            <div className="flex items-start gap-3 mb-6">
+              <input 
+                type="checkbox" 
+                id="privacy" 
+                checked={privacyAcknowledged}
+                onChange={(e) => setPrivacyAcknowledged(e.target.checked)}
+                className="mt-1 w-4 h-4 text-[#ffa23f] bg-white/20 border-white/30 rounded cursor-pointer "
+              />
+              <label htmlFor="privacy" className="text-white/90 text-sm leading-relaxed">
+                I acknowledge that the AWS Learning Club – UPHSL will securely handle my information in compliance with the Data Privacy Act of 2012, and I consent to the use of my data for its official initiatives and activities.
+              </label>
+            </div>
+            <button 
+              onClick={handleSubmit}
+              disabled={!privacyAcknowledged || ['firstName', 'lastName', 'age', 'contactNumber', 'facebookLink', 'personalEmail', 'schoolEmail', 'program', 'yearSection'].some(field => !formData[field as keyof typeof formData].trim())}
+              className={`w-full py-3 px-6 rounded-md font-semibold transition-all duration-200 ${
+                privacyAcknowledged && !['firstName', 'lastName', 'age', 'contactNumber', 'facebookLink', 'personalEmail', 'schoolEmail', 'program', 'yearSection'].some(field => !formData[field as keyof typeof formData].trim())
+                  ? 'bg-[#ffa23f] hover:bg-[#e8912d] text-white cursor-pointer' 
+                  : 'bg-gray-500 text-gray-300 cursor-not-allowed'
+              }`}
+            >
+              Submit Application
+            </button>
           </div>
         
           <div className="mt-6 text-center text-sm text-white/70">
