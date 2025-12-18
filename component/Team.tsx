@@ -121,7 +121,10 @@ const Team: React.FC = () => {
 
   // Function to update cards to show based on window width
   const updateCardsToShow = useCallback(() => {
-    if (window.innerWidth >= 1280) {
+    if (window.innerWidth >= 1536) {
+      // 2xl
+      setCardsToShow(5);
+    } else if (window.innerWidth >= 1280) {
       // xl
       setCardsToShow(4);
     } else if (window.innerWidth >= 1024) {
@@ -217,7 +220,9 @@ const Team: React.FC = () => {
                       ? "w-1/2"
                       : cardsToShow === 3
                       ? "w-1/3"
-                      : "w-1/4"
+                      : cardsToShow === 4
+                      ? "w-1/4"
+                      : "w-1/5"
                   }`}
               >
                 <Card
