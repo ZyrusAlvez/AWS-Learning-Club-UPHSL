@@ -1,4 +1,5 @@
 import Card from "@/component/About/Card"
+import Mission from "@/component/About/Mission"
 
 const Top = () => {
   return (
@@ -21,6 +22,7 @@ const Top = () => {
           subtitle="Connect, collaborate, and grow with other cloud enthusiasts."
         />
       </div>
+      <Mission />
     </div>
   );
 };
