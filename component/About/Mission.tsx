@@ -3,16 +3,16 @@ import { SlTarget } from "react-icons/sl";
 
 const Mission = () => {
   return (
-    <div className='flex justify-center items-center sm:flex-col md:flex-row py-8 px-16 gap-8'>
+    <div className='flex justify-center items-stretch flex-col md:flex-row py-8 px-4 sm:px-8 md:px-16 gap-8'>
 
-      <div className='flex flex-col items-center border-2 border-[#cc8232] p-8 rounded-xl sm:w-full md:w-1/2 bg-white/10 backdrop-blur-3xl h-[300px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#ffa23f]' >
+      <div className='flex flex-col items-center border-2 border-[#cc8232] p-6 sm:p-8 rounded-xl w-full md:w-1/2 bg-white/10 backdrop-blur-3xl min-h-[300px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#ffa23f]' >
         <SlTarget size={22} className="absolute top-9"/>
         <div
           className="w-[22px] h-0 rounded-full absolute top-12"
           style={{ boxShadow: "0 0 30px 20px rgba(255, 162, 63, 0.4)" }}
         ></div>
-        <h1 className="text-2xl font-semibold mt-14 mb-4">MISSION</h1>
-        <h2 className="text-center mx-4">
+        <h1 className="text-xl sm:text-2xl font-semibold mt-14 mb-4">MISSION</h1>
+        <h2 className="text-center mx-4 text-sm sm:text-base">
           "Our mission is to foster a friendly and collaborative
           environment where individuals interested in technology,
           especially AWS and cloud computing, can connect, learn, and
@@ -22,21 +22,17 @@ const Mission = () => {
         </h2>
       </div>
 
-           <div className='flex flex-col items-center border-2 border-[#cc8232] p-8 rounded-xl sm:w-full md:w-1/2 bg-white/10 backdrop-blur-3xl h-[300px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#ffa23f]' >
+      <div className='flex flex-col items-center border-2 border-[#cc8232] p-6 sm:p-8 rounded-xl w-full md:w-1/2 bg-white/10 backdrop-blur-3xl min-h-[300px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#ffa23f]' >
         <IoEyeSharp size={22} className="absolute top-9"/>
         <div
           className="w-[22px] h-0 rounded-full absolute top-12"
           style={{ boxShadow: "0 0 30px 20px rgba(255, 162, 63, 0.4)" }}
         ></div>
-        <h1 className="text-2xl font-semibold mt-14 mb-4">VISION</h1>
-        <h2 className="text-center mx-4">
+        <h1 className="text-xl sm:text-2xl font-semibold mt-14 mb-4">VISION</h1>
+        <h2 className="text-center mx-4 text-sm sm:text-base">
          "To create a supportive space at the University of Perpetual Help System Laguna, where students and tech enthusiasts can come together to explore, learn, and share emerging technologies, with a focus on AWS and cloud computing."
         </h2>
       </div>
-
-
-
-
     </div>
   )
 }
