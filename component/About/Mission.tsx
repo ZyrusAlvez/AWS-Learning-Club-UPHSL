@@ -5,7 +5,7 @@ const Mission = () => {
   return (
     <div className='flex justify-center items-center sm:flex-col md:flex-row py-8 px-16 gap-8'>
 
-      <div className='flex flex-col items-center border-2 border-[#ffa23f] p-8 rounded-xl sm:w-full md:w-1/2 bg-white/10 backdrop-blur-3xl h-[300px]' >
+      <div className='flex flex-col items-center border-2 border-[#cc8232] p-8 rounded-xl sm:w-full md:w-1/2 bg-white/10 backdrop-blur-3xl h-[300px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#ffa23f]' >
         <SlTarget size={22} className="absolute top-9"/>
         <div
           className="w-[22px] h-0 rounded-full absolute top-12"
@@ -22,7 +22,7 @@ const Mission = () => {
         </h2>
       </div>
 
-      <div className='flex flex-col items-center border-2 border-[#ffa23f] p-8 rounded-xl sm:w-full md:w-1/2 bg-white/10 backdrop-blur-3xl h-[300px]'>
+           <div className='flex flex-col items-center border-2 border-[#cc8232] p-8 rounded-xl sm:w-full md:w-1/2 bg-white/10 backdrop-blur-3xl h-[300px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#ffa23f]' >
         <IoEyeSharp size={22} className="absolute top-9"/>
         <div
           className="w-[22px] h-0 rounded-full absolute top-12"
