@@ -13,7 +13,7 @@ const Pagination = ({ count, currentPage, onPageChange }: Props) => {
         <button
           key={index}
           onClick={() => onPageChange(index)}
-          className={`w-2 h-2 rounded-full transition-all duration-300 ease-in-out
+          className={`w-2 h-2 cursor-pointer rounded-full transition-all duration-300 ease-in-out
             ${currentPage === index 
               ? 'bg-[#ffa23f] scale-125' 
               : 'bg-white'
