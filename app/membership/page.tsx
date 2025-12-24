@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ const MembershipForm = () => {
     interest: ''
   })
 
-  const [privacyAcknowledged, setPrivacyAcknowledged] = useState(false)
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -35,10 +36,6 @@ const MembershipForm = () => {
       return
     }
     
-    if (!privacyAcknowledged) {
-      alert('Please acknowledge the privacy policy before submitting.')
-      return
-    }
     
     console.log('Form submitted:', formData)
     alert('Application submitted successfully!')
@@ -126,33 +123,24 @@ const MembershipForm = () => {
 
           
           <div className="bg-white/10 backdrop-blur-sm shadow-xl p-8 border border-white/20 mt-8">
-            <div className="flex items-start gap-3 mb-6">
-              <input 
-                type="checkbox" 
-                id="privacy" 
-                checked={privacyAcknowledged}
-                onChange={(e) => setPrivacyAcknowledged(e.target.checked)}
-                className="mt-1 w-4 h-4 text-[#ffa23f] bg-white/20 border-white/30 rounded cursor-pointer "
-              />
-              <label htmlFor="privacy" className="text-white/90 text-sm leading-relaxed">
-                I acknowledge that the AWS Learning Club – UPHSL will securely handle my information in compliance with the Data Privacy Act of 2012, and I consent to the use of my data for its official initiatives and activities.
-              </label>
-            </div>
-            <button 
-              onClick={handleSubmit}
-              disabled={!privacyAcknowledged || ['firstName', 'lastName', 'age', 'contactNumber', 'facebookLink', 'personalEmail', 'schoolEmail', 'program', 'yearSection'].some(field => !formData[field as keyof typeof formData].trim())}
-              className={`w-full py-3 px-6 rounded-md font-semibold transition-all duration-200 ${
-                privacyAcknowledged && !['firstName', 'lastName', 'age', 'contactNumber', 'facebookLink', 'personalEmail', 'schoolEmail', 'program', 'yearSection'].some(field => !formData[field as keyof typeof formData].trim())
-                  ? 'bg-[#ffa23f] hover:bg-[#e8912d] text-white cursor-pointer' 
-                  : 'bg-gray-500 text-gray-300 cursor-not-allowed'
-              }`}
-            >
-              Submit Application
+            <p className="text-white/90 text-sm leading-relaxed">
+              If you choose to fill out this form and click "Submit", then your personal information will be used for the purposes of applying to be a Captain in the Program. By completing this form, you agree to the{' '}
+              <Link href="/code-of-conduct" className="text-[#ffa23f] hover:underline font-medium">
+                Code of Conduct
+              </Link>
+              . AWSLC - UPHSL handles your information as described in the{' '}
+              <Link href="/privacy-policy" className="text-[#ffa23f] hover:underline font-medium">
+                Privacy Notice
+              </Link>
+              .
+            </p>
+            <button type="submit" onClick={handleSubmit} className="w-full mt-6 bg-[#ffa23f] text-white font-bold py-3 px-4 rounded-md hover:bg-[#ff8c1a] transition-colors">
+              Submit
             </button>
           </div>
         
           <div className="mt-6 text-center text-sm text-white/70">
-            <p>Questions? Contact us at <a href="mailto:awslc.uphs;@gmail.com" className="text-[#ffa23f] hover:underline">awsclub@uphsl.edu</a></p>
+            <p>Questions? Contact us at <a href="mailto:awslc.uphsl@gmail.com" className="text-[#ffa23f] hover:underline">awsclub@uphsl.edu</a></p>
           </div>
         </div>
       </div>
