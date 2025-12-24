@@ -7,7 +7,7 @@ const Footer = () => {
       <p>© 2025 AWS Learning Club - UPHSL. All rights reserved.</p>
       <div className='flex gap-4 underline'>
         <Link href="/">About Us</Link>
-        <Link href="/policy">Privacy Policy</Link>
+        <Link href="/privacy-policy">Privacy Policy</Link>
         <Link href="/code-of-conduct">Code of Conduct</Link>
       </div>
     </div>
