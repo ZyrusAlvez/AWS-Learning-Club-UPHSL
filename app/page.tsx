@@ -3,6 +3,7 @@ import Hero from "@/component/Hero"
 import Team from "@/component/Team"
 import About from "@/component/About"
 import Contact from "@/component/Contact"
+import Event from "@/component/Event"
 
 const Page = () => {
   return (
@@ -10,6 +11,7 @@ const Page = () => {
       <Header />
       <Hero />
       <About />
+      <Event />
       <Team />     
       <Contact />
     </div>
