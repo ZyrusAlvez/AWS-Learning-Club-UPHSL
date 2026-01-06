@@ -22,6 +22,12 @@ const ImageFrame = ({image_path}: {image_path: string}) => {
     };
   }, [selectedImage]);
 
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      setSelectedImage(null);
+    }
+  };
+
   return (
     <>
       <div className="w-full">
@@ -68,9 +74,9 @@ const ImageFrame = ({image_path}: {image_path: string}) => {
 
       {mounted && selectedImage && createPortal(
         <div 
-          className="fixed inset-0 backdrop-blur-md z-[9999] flex items-center justify-center p-4" 
+          className="fixed inset-0 backdrop-blur-md z-[9999] flex items-center justify-center p-4 cursor-pointer" 
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
-          onClick={() => setSelectedImage(null)}
+          onClick={handleBackdropClick}
         >
           <button 
             className="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 z-[10000] drop-shadow-lg" 
@@ -83,8 +89,7 @@ const ImageFrame = ({image_path}: {image_path: string}) => {
             alt="Event Image of AWS Learning Club - UPHSL" 
             width={1920} 
             height={1080} 
-            className="max-w-full max-h-[90vh] object-contain"
-            onClick={(e) => e.stopPropagation()}
+            className="max-w-full max-h-[90vh] object-contain pointer-events-none"
           />
         </div>,
         document.body
