@@ -25,21 +25,18 @@ const SlideShow = () => {
   }, [images.length]);
 
   return (
-    <div className="relative w-[80%] h-[55%] overflow-hidden rounded-2xl">
+    <div className="relative w-full max-w-2xl mx-auto aspect-[16/11] overflow-hidden rounded-t-2xl">
       {images.map((src, i) => (
-        <div
+        <Image
           key={i}
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
-            i === current ? "opacity-100" : "opacity-0"
+          src={src}
+          alt={`slide-${i}`}
+          fill
+          className={`object-cover transition-opacity duration-1000 ${
+          i === current ? "opacity-100" : "opacity-0"
           }`}
-        >
-          <Image
-            src={src}
-            alt={`slide-${i}`}
-            className="object-cover"
-            priority={i === 0}
-          />
-        </div>
+          priority={i === 0}
+        />
       ))}
     </div>
   );
