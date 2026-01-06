@@ -4,8 +4,8 @@ import { IoLocationOutline } from "react-icons/io5";
 
 const Card = ({ title, subtitle, info } : {title: string, subtitle: string, info: string}) => {
   return (
-    <div className="text-white flex flex-col items-center space-y-4 w-[360px]">
-      <div className="text-[#ffa23f] text-[48px] h-[35px]"> 
+    <div className="text-white flex flex-col items-center space-y-3 sm:space-y-4 w-full sm:w-[360px] max-w-sm px-4">
+      <div className="text-[#ffa23f] text-[36px] sm:text-[48px] h-[28px] sm:h-[35px]"> 
         {title === "Email" ? (
           <MdOutlineEmail />
         ) : title === "Phone" ? (
@@ -14,9 +14,9 @@ const Card = ({ title, subtitle, info } : {title: string, subtitle: string, info
           <IoLocationOutline />
         )}
       </div>
-      <h1 className="font-bold text-[32px]">{title}</h1>
-      <h2 className="text-center">{subtitle}</h2>
-      <h3 className="text-[#ffa23f] text-center whitespace-nowrap">{info}</h3>
+      <h1 className="font-bold text-2xl sm:text-[32px]">{title}</h1>
+      <h2 className="text-center text-sm sm:text-base">{subtitle}</h2>
+      <h3 className="text-[#ffa23f] text-center text-sm sm:text-base break-words w-full">{info}</h3>
     </div>
   );
 };
