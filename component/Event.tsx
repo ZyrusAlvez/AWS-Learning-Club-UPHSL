@@ -1,5 +1,9 @@
 import Title from "@/component/Event/Title"
 import ImageFrame from "./Event/ImageFrame"
+import Pagination from "@/component/UI/Pagination"
+import ArrowLeft from "@/component/UI/ArrowLeft"
+import ArrowRight from "@/component/UI/ArrowRight"
+import { events } from "@/data/event"
 
 const Event = () => {
   return (
@@ -9,7 +13,7 @@ const Event = () => {
         <div>
           title
         </div>
-        <ImageFrame image_path="/event/1"/>
+        <ImageFrame image_path="/event/MMPH25"/>
       </div>
     </div>
   )

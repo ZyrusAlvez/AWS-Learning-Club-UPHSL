@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 
 # Get the target directory
-directory = Path(os.getcwd()) / "public" / "event" / "1"
+directory = Path(os.getcwd()) / "public" / "event" / "ZeroTo10X"
 print("Scanning directory:", directory)
 
 # Loop through all .png files (case-insensitive)
