@@ -9,42 +9,42 @@ export const events: Event[] = [
   {
     title: "Meet Magento Philippines",
     subtitle:
-      "Meet Magento Philippines is a premier ecommerce conference that brings together merchants, developers, agencies, and technology leaders to explore the latest trends in Magento Open Source and Adobe Commerce. The event features expert-led keynotes, business and technical sessions, and real-world case studies focused on scaling online businesses and driving digital growth.\n\nDesigned for both business and technical audiences, the conference also serves as a strong networking platform for the local and global ecommerce community. Attendees gain practical insights, discover new solutions, and connect with industry professionals shaping the future of ecommerce in the Philippines and beyond.",
+      "A major ecommerce conference bringing together students, developers, and industry professionals to explore modern online commerce. The event features expert talks, technical sessions, and real-world case studies focused on Magento, Adobe Commerce, and digital business growth.",
     date: "November 2025",
     pictures: "/event/MMPH25",
   },
   {
     title: "YGG Play Summit",
     subtitle:
-      "A student-focused summit that explores the intersection of gaming, blockchain, and digital careers. The event features talks, panels, and discussions designed to introduce students to opportunities in Web3, esports, and the gaming industry, while connecting them with professionals and communities shaping the future of play.",
+      "A student-centered summit focused on gaming, Web3, and emerging digital careers. The event includes talks and discussions that introduce participants to blockchain gaming, esports, and opportunities within the global gaming industry.",
     date: "November 2025",
     pictures: "/event/YPS2025",
   },
   {
     title: "Zero to 10X Developer",
     subtitle:
-      "A hands-on learning event aimed at helping students grow from beginner to confident developers. The sessions focus on practical skills, real-world development workflows, and career guidance to help participants level up their technical abilities and mindset in software development.",
+      "A hands-on developer event designed to help students strengthen their programming skills. Sessions focus on practical development workflows, problem-solving, and career growth to prepare participants for real-world software projects.",
     date: "October 2025",
     pictures: "/event/ZeroTo10X",
   },
   {
     title: "CCS Orientation 2025",
     subtitle:
-      "An orientation program designed to welcome new College of Computer Studies students. The event introduces academic policies, student organizations, facilities, and opportunities, helping students understand what to expect and how to thrive throughout their college journey.",
+      "An official orientation program welcoming new College of Computer Studies students. The event introduces academic guidelines, student organizations, and available resources to help students start their college journey with confidence.",
     date: "September 2025",
     pictures: "/event/CCS Orientation 2025",
   },
   {
     title: "TechCon 2025",
     subtitle:
-      "A student-led technology conference featuring talks and workshops on software development, cloud computing, cybersecurity, and emerging technologies. TechCon aims to inspire learning, collaboration, and innovation among students passionate about tech.",
+      "A student-led technology conference highlighting current trends in computing and innovation. It features talks and workshops on software, cloud technologies, and emerging tools that encourage learning and collaboration.",
     date: "April 2025",
     pictures: "/event/TechCon 2025",
   },
   {
     title: "Ideathon 2025",
     subtitle:
-      "A collaborative ideation event where students form teams to solve real-world problems through technology and innovation. Participants brainstorm, design, and pitch their ideas, fostering creativity, teamwork, and problem-solving skills.",
+      "A competitive ideation event where students collaborate to solve real-world challenges. Participants develop, refine, and pitch innovative ideas, building skills in creativity, teamwork, and problem solving.",
     date: "April 2025",
     pictures: "/event/Ideathon 2025",
   },
