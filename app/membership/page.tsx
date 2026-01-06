@@ -124,7 +124,7 @@ const MembershipForm = () => {
           
           <div className="bg-white/10 backdrop-blur-sm shadow-xl p-8 border border-white/20 mt-8">
             <p className="text-white/90 text-sm leading-relaxed">
-              If you choose to fill out this form and click "Submit", then your personal information will be used for the purposes of applying to be a Captain in the Program. By completing this form, you agree to the{' '}
+              By completing this form and clicking "Submit", you agree to the{' '}
               <Link href="/code-of-conduct" className="text-[#ffa23f] hover:underline font-medium">
                 Code of Conduct
               </Link>
