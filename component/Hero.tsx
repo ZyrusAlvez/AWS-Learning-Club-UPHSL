@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <>
       <div className="flex h-[70px] md:hidden"/>
-      <div className='md:h-screen mx-auto grid md:grid-cols-2 items-center gap-12 lg:gap-16 px-4 py-8 md:py-0 max-w-7xl'>
+      <div className='md:h-screen md:max-h-[600px] mx-auto grid md:grid-cols-2 items-center gap-12 lg:gap-16 px-4 py-8 md:py-0 max-w-7xl'>
         <main className='flex flex-col text-white gap-3 md:gap-4'>
           <h1 className='text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold'><span className='text-[#ffa23f] font-extrabold'>AWS</span> Learning Club</h1>
           <h2 className='text-sm sm:text-base md:text-base font-bold'>University of Perpetual Help System Laguna - Biñan</h2>
