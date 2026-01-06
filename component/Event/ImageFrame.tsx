@@ -16,11 +16,19 @@ const ImageFrame = ({image_path}: {image_path: string}) => {
   return (
     <>
       <div className="w-full">
-        <Image src={`${image_path}/1.webp`} alt="Event Image of AWS Learning Club - UPHSL" height={800} width={1200} className="w-full h-auto cursor-pointer rounded-lg" onClick={() => setSelectedImage(`${image_path}/1.webp`)}/>
+        <div className="relative w-full aspect-[3/2] overflow-hidden rounded-lg">
+          <Image src={`${image_path}/1.webp`} alt="Event Image of AWS Learning Club - UPHSL" fill className="object-cover cursor-pointer" onClick={() => setSelectedImage(`${image_path}/1.webp`)}/>
+        </div>
         <div className="grid grid-cols-3 gap-1 sm:gap-2 mt-1 sm:mt-2">
-          <Image src={`${image_path}/2.webp`} alt="Event Image of AWS Learning Club - UPHSL" height={600} width={800} className="w-full h-auto cursor-pointer rounded" onClick={() => setSelectedImage(`${image_path}/2.webp`)}/>
-          <Image src={`${image_path}/3.webp`} alt="Event Image of AWS Learning Club - UPHSL" height={600} width={800} className="w-full h-auto cursor-pointer rounded" onClick={() => setSelectedImage(`${image_path}/3.webp`)}/>
-          <Image src={`${image_path}/4.webp`} alt="Event Image of AWS Learning Club - UPHSL" height={600} width={800} className="w-full h-auto cursor-pointer rounded" onClick={() => setSelectedImage(`${image_path}/4.webp`)}/>
+          <div className="relative w-full aspect-[4/3] overflow-hidden rounded">
+            <Image src={`${image_path}/2.webp`} alt="Event Image of AWS Learning Club - UPHSL" fill className="object-cover cursor-pointer" onClick={() => setSelectedImage(`${image_path}/2.webp`)}/>
+          </div>
+          <div className="relative w-full aspect-[4/3] overflow-hidden rounded">
+            <Image src={`${image_path}/3.webp`} alt="Event Image of AWS Learning Club - UPHSL" fill className="object-cover cursor-pointer" onClick={() => setSelectedImage(`${image_path}/3.webp`)}/>
+          </div>
+          <div className="relative w-full aspect-[4/3] overflow-hidden rounded">
+            <Image src={`${image_path}/4.webp`} alt="Event Image of AWS Learning Club - UPHSL" fill className="object-cover cursor-pointer" onClick={() => setSelectedImage(`${image_path}/4.webp`)}/>
+          </div>
         </div>
       </div>
 
