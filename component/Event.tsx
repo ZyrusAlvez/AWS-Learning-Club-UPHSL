@@ -68,7 +68,7 @@ const Event = () => {
   const actualIndex = currentIndex % events.length
 
   return (
-    <div className="py-4 px-4 sm:px-6 lg:px-8">
+    <div id="events" className="py-4 px-4 sm:px-6 lg:px-8 scroll-mt-[70px]">
       <Title />
       <div className="md:flex items-center gap-4 max-w-7xl mx-auto mt-8">
         <div className="hidden md:block">

@@ -3,7 +3,7 @@ import Mission from "@/component/About/Mission"
 
 const Top = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
+    <div id="about" className="w-full flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 scroll-mt-[70px]">
       <h1 className="text-center text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl">
         We offer a mix of educational programs and community-driven activities
         designed to help you excel in AWS.

@@ -89,7 +89,7 @@ const Team: React.FC = () => {
     return baseTranslate;
   };
   return (
-    <div className="flex flex-col gap-4 px-4 sm:px-6 lg:px-8 py-4">
+    <div id="team" className="flex flex-col gap-4 px-4 sm:px-6 lg:px-8 py-4 scroll-mt-[70px]">
       <Title />
 
       <div className="relative w-full max-w-7xl mx-auto">

@@ -4,11 +4,18 @@ import Image from "next/image";
 import Button from "./UI/Button";
 import TextButton from "./UI/TextButton";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -20,11 +27,11 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden lg:flex gap-4 items-center">
-          <TextButton>About Us</TextButton>
-          <TextButton>Events</TextButton>
-          <TextButton>Upcoming</TextButton>
-          <TextButton>The Team</TextButton>
-          <TextButton>Contact Us</TextButton>
+          <TextButton onClick={() => scrollToSection('about')}>About Us</TextButton>
+          <TextButton onClick={() => scrollToSection('events')}>Events</TextButton>
+          <TextButton onClick={() => scrollToSection('upcoming')}>Upcoming</TextButton>
+          <TextButton onClick={() => scrollToSection('team')}>The Team</TextButton>
+          <TextButton onClick={() => scrollToSection('contact')}>Contact Us</TextButton>
           <Button onClick={() => router.push("/membership")}>Join Us</Button>
         </div>
 
@@ -59,11 +66,11 @@ const Header = () => {
           </svg>
         </button>
         <div className="flex flex-col pt-16 px-6 gap-6">
-          <TextButton onClick={() => setIsMenuOpen(false)}>About Us</TextButton>
-          <TextButton onClick={() => setIsMenuOpen(false)}>Events</TextButton>
-          <TextButton onClick={() => setIsMenuOpen(false)}>Upcoming</TextButton>
-          <TextButton onClick={() => setIsMenuOpen(false)}>The Team</TextButton>
-          <TextButton onClick={() => setIsMenuOpen(false)}>Contact Us</TextButton>
+          <TextButton onClick={() => { scrollToSection('about'); setIsMenuOpen(false); }}>About Us</TextButton>
+          <TextButton onClick={() => { scrollToSection('events'); setIsMenuOpen(false); }}>Events</TextButton>
+          <TextButton onClick={() => { scrollToSection('upcoming'); setIsMenuOpen(false); }}>Upcoming</TextButton>
+          <TextButton onClick={() => { scrollToSection('team'); setIsMenuOpen(false); }}>The Team</TextButton>
+          <TextButton onClick={() => { scrollToSection('contact'); setIsMenuOpen(false); }}>Contact Us</TextButton>
           <Button className="mt-4" onClick={() => { router.push("/membership"); setIsMenuOpen(false); }}>Join Us</Button>
         </div>
       </div>

@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(to right, #b21b6e, #640d6b);
   color: white;

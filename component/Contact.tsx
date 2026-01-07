@@ -3,7 +3,7 @@ import Title from "@/component/Contact/Title"
 
 const Contact_Us = () => {
   return (
-      <div id="contact_us" className="w-full flex flex-col items-center justify-center text-white px-4 sm:px-6 lg:px-8">
+      <div id="contact" className="w-full flex flex-col items-center justify-center text-white px-4 sm:px-6 lg:px-8 scroll-mt-[70px]">
         <Title />
         <div className="flex justify-center items-stretch flex-wrap gap-8 sm:gap-12 lg:gap-16 mt-6 sm:mt-8 w-full max-w-7xl">
           <Card
