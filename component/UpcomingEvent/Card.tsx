@@ -1,10 +1,11 @@
 import React from 'react'
-import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTools, FaChalkboardTeacher, FaTrophy } from 'react-icons/fa'
+import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTools, FaChalkboardTeacher, FaTrophy, FaUsers } from 'react-icons/fa'
 
 enum EventType {
   WORKSHOP = 'workshop',
   SEMINAR = 'seminar',
-  COMPETITION = 'competition'
+  COMPETITION = 'competition',
+  COMMUNITY = 'community'
 }
 
 type Props = {
@@ -20,7 +21,8 @@ const Card = ({title, subtitle, date="TBA", time="TBA", location="TBA", type=Eve
   const typeConfig = {
     [EventType.WORKSHOP]: { color: 'border-purple-500 bg-purple-500/10', icon: FaTools, label: 'Workshop' },
     [EventType.SEMINAR]: { color: 'border-blue-500 bg-blue-500/10', icon: FaChalkboardTeacher, label: 'Seminar' },
-    [EventType.COMPETITION]: { color: 'border-yellow-500 bg-yellow-500/10', icon: FaTrophy, label: 'Competition' }
+    [EventType.COMPETITION]: { color: 'border-yellow-500 bg-yellow-500/10', icon: FaTrophy, label: 'Competition' },
+    [EventType.COMMUNITY]: { color: 'border-green-500 bg-green-500/10', icon: FaUsers, label: 'Community' }
   }
 
   const TypeIcon = typeConfig[type].icon
