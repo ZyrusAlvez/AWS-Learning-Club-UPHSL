@@ -61,43 +61,55 @@ const Event = () => {
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8">
       <Title />
-      <div className="relative overflow-hidden max-w-7xl mx-auto mt-8">
-        <div 
-          className="flex"
-          style={{ 
-            transform: `translateX(-${currentIndex * 100}%)`,
-            transition: isTransitioning ? 'transform 500ms ease-out' : 'none'
-          }}
-        >
-          {infiniteEvents.map((event, index) => (
-            <div key={index} className="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12">
-              <div 
-                className="space-y-2 order-2 lg:order-1"
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-              >
-                <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                  {event.title}
-                </h2>
-                <p className="text-xs sm:text-sm text-gray-400">
-                  {event.date}
-                </p>
-                <p className="text-sm sm:text-base text-gray-300 leading-relaxed whitespace-pre-line">
-                  {event.subtitle}
-                </p>
+      <div className="md:flex items-center gap-4 max-w-7xl mx-auto mt-8">
+        <div className="hidden md:block">
+          <ArrowLeft onClick={handlePrev} />
+        </div>
+        <div className="relative overflow-hidden flex-1">
+          <div 
+            className="flex"
+            style={{ 
+              transform: `translateX(-${currentIndex * 100}%)`,
+              transition: isTransitioning ? 'transform 500ms ease-out' : 'none'
+            }}
+          >
+            {infiniteEvents.map((event, index) => (
+              <div key={index} className="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12">
+                <div 
+                  className="space-y-2 order-2 lg:order-1"
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+                    {event.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-gray-300">
+                    {event.date}
+                  </p>
+                  <p className="text-sm sm:text-base text-gray-100 leading-relaxed whitespace-pre-line">
+                    {event.subtitle}
+                  </p>
+                </div>
+                <div className="order-1 lg:order-2">
+                  <ImageFrame image_path={event.pictures}/>
+                </div>
               </div>
-              <div className="order-1 lg:order-2">
-                <ImageFrame image_path={event.pictures}/>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+        <div className="hidden md:block">
+          <ArrowRight onClick={handleNext} />
         </div>
       </div>
-      <div className="flex items-center justify-center gap-6 mt-8 max-w-7xl mx-auto">
-        <ArrowLeft onClick={handlePrev} />
+      <div className="flex items-center justify-center gap-6 mt-2 md:mt-6 max-w-7xl mx-auto">
+        <div className="block md:hidden">
+          <ArrowLeft onClick={handlePrev} />
+        </div>
         <Pagination count={events.length} currentPage={actualIndex} onPageChange={(i) => setCurrentIndex(i + events.length)} />
-        <ArrowRight onClick={handleNext} />
+        <div className="block md:hidden">
+          <ArrowRight onClick={handleNext} />
+        </div>
       </div>
     </div>
   )
