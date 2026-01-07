@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaFacebook, FaLinkedin, FaDiscord, FaEnvelope, FaPhone, FaMapMarkerAlt, FaAws, FaCloud } from 'react-icons/fa'
+import { FaFacebook, FaLinkedin, FaDiscord, FaEnvelope, FaPhone, FaMapMarkerAlt, FaAws, FaCloud, FaCheckCircle, FaUserPlus, FaShieldAlt, FaFileAlt } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -42,23 +42,27 @@ const Footer = () => {
             <h3 className='text-sm font-semibold mb-2 text-[#ffa23f]'>Quick Links</h3>
             <ul className='space-y-1 text-xs'>
               <li>
-                <Link href='/verify' className='text-gray-400 hover:text-white transition-colors'>
-                  Verify
+                <Link href='/verify' className='flex items-center gap-2 text-gray-400 hover:text-white transition-colors'>
+                  <FaCheckCircle className='h-3 w-3 text-[#ffa23f]' />
+                  <span>Verify</span>
                 </Link>
               </li>
               <li>
-                <Link href='/membership' className='text-gray-400 hover:text-white transition-colors'>
-                  Membership
+                <Link href='/membership' className='flex items-center gap-2 text-gray-400 hover:text-white transition-colors'>
+                  <FaUserPlus className='h-3 w-3 text-[#ffa23f]' />
+                  <span>Membership</span>
                 </Link>
               </li>
               <li>
-                <Link href='/privacy-policy' className='text-gray-400 hover:text-white transition-colors'>
-                  Privacy Policy
+                <Link href='/privacy-policy' className='flex items-center gap-2 text-gray-400 hover:text-white transition-colors'>
+                  <FaShieldAlt className='h-3 w-3 text-[#ffa23f]' />
+                  <span>Privacy Policy</span>
                 </Link>
               </li>
               <li>
-                <Link href='/code-of-conduct' className='text-gray-400 hover:text-white transition-colors'>
-                  Code of Conduct
+                <Link href='/code-of-conduct' className='flex items-center gap-2 text-gray-400 hover:text-white transition-colors'>
+                  <FaFileAlt className='h-3 w-3 text-[#ffa23f]' />
+                  <span>Code of Conduct</span>
                 </Link>
               </li>
             </ul>
