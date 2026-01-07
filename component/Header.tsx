@@ -22,6 +22,7 @@ const Header = () => {
         <div className="hidden lg:flex gap-4 items-center">
           <TextButton>About Us</TextButton>
           <TextButton>Events</TextButton>
+          <TextButton>Upcoming</TextButton>
           <TextButton>The Team</TextButton>
           <TextButton>Contact Us</TextButton>
           <Button onClick={() => router.push("/membership")}>Join Us</Button>
@@ -60,6 +61,7 @@ const Header = () => {
         <div className="flex flex-col pt-16 px-6 gap-6">
           <TextButton onClick={() => setIsMenuOpen(false)}>About Us</TextButton>
           <TextButton onClick={() => setIsMenuOpen(false)}>Events</TextButton>
+          <TextButton onClick={() => setIsMenuOpen(false)}>Upcoming</TextButton>
           <TextButton onClick={() => setIsMenuOpen(false)}>The Team</TextButton>
           <TextButton onClick={() => setIsMenuOpen(false)}>Contact Us</TextButton>
           <Button className="mt-4" onClick={() => { router.push("/membership"); setIsMenuOpen(false); }}>Join Us</Button>
