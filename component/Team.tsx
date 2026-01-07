@@ -132,8 +132,9 @@ const Team: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4 px-4 sm:px-8 max-w-7xl mx-auto w-full">
+      <div className="flex sm:flex-row justify-center sm:justify-between items-center gap-12 px-4 sm:px-8 max-w-7xl mx-auto w-full">
         <Pagination
+          team={true}
           count={teamMembers.length}
           currentPage={
             startIndex >= teamMembers.length

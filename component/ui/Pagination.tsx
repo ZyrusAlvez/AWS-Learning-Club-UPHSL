@@ -3,12 +3,13 @@ import React from 'react';
 type Props = {
   count : number,
   currentPage: number,
-  onPageChange: (newIndex: number) => void
+  onPageChange: (newIndex: number) => void,
+  team? : boolean
 }
 
-const Pagination = ({ count, currentPage, onPageChange }: Props) => {
+const Pagination = ({ count, currentPage, onPageChange, team = false}: Props) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className={team ? "grid grid-cols-8 items-center gap-2" : "flex items-center gap-2"}>
       {Array.from({ length: count }).map((_, index) => (
         <button
           key={index}
