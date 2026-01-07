@@ -17,7 +17,7 @@ const Footer = () => {
 
       <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid md:grid-cols-4 gap-6 text-sm'>
-          <div className='md:col-span-2'>
+          <div className='col-span-2 md:col-span-2'>
             <div className='flex items-center mb-2'>
               <Image src='/awslc logo.webp' alt='AWS Learning Club' width={24} height={24} />
               <span className='ml-2 text-base font-bold'>AWS Learning Club</span>
