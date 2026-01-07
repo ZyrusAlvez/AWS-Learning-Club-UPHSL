@@ -132,7 +132,7 @@ const Team: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center px-4 sm:px-8">
+      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4 px-4 sm:px-8 max-w-7xl mx-auto w-full">
         <Pagination
           count={teamMembers.length}
           currentPage={
@@ -144,7 +144,7 @@ const Team: React.FC = () => {
           }
           onPageChange={handlePaginationClick}
         />
-        <div className="flex gap-4">
+        <div className="flex gap-4 lg:gap-6">
           <Arrow_Left onClick={prevSlide}/>
           <Arrow_Right onClick={nextSlide}/>
         </div>
