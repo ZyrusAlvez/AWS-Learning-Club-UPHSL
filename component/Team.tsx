@@ -125,6 +125,8 @@ const Team: React.FC = () => {
                   name={member.name}
                   title={member.title}
                   subtitle={member.subtitle}
+                  facebook={member.facebook}
+                  linkedin={member.linkedin}
                 />
               </div>
             ))}

@@ -6,14 +6,12 @@ interface TeamCardProps {
   name: string;
   title: string;
   subtitle: string;
-  className?: string; // optional
+  facebook?: string;
+  linkedin?: string;
+  className?: string;
 }
 
-const Team_Card: React.FC<TeamCardProps> = ({ img, name, title, subtitle, className }) => {
-  function handleClick(): void {
-    alert("We'll update officers social links soon");
-  }
-
+const Team_Card: React.FC<TeamCardProps> = ({ img, name, title, subtitle, facebook, linkedin, className }) => {
   return (
     <div className={`w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-[256px] flex flex-col text-white ${className || ""}`}>
       <div className="relative overflow-hidden rounded-lg mb-4 sm:mb-6 bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
@@ -24,8 +22,16 @@ const Team_Card: React.FC<TeamCardProps> = ({ img, name, title, subtitle, classN
       <h2 className="text-base sm:text-lg mb-1">{title}</h2>
       <h3 className="text-sm sm:text-base mb-2">{subtitle}</h3>
       <div className="flex text-pink cursor-pointer text-xl sm:text-2xl gap-3 sm:gap-4">
-        <FaLinkedin className="hover:text-white" onClick={handleClick} />
-        <FaFacebook className="hover:text-white" onClick={handleClick} />
+        {linkedin && (
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <FaLinkedin />
+          </a>
+        )}
+        {facebook && (
+          <a href={facebook} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+            <FaFacebook />
+          </a>
+        )}
       </div>
     </div>
   );
