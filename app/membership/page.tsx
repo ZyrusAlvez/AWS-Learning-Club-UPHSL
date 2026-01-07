@@ -140,7 +140,7 @@ const MembershipForm = () => {
           </div>
         
           <div className="mt-6 text-center text-sm text-white/70">
-            <p>Questions? Contact us at <a href="mailto:awslc.uphsl@gmail.com" className="text-[#ffa23f] hover:underline">awsclub@uphsl.edu</a></p>
+            <p>Questions? Contact us at <a href="mailto:awslc.uphsl@gmail.com" className="text-[#ffa23f] hover:underline">awslc.uphsl@gmail.com</a></p>
           </div>
         </div>
       </div>
