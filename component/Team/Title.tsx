@@ -4,7 +4,7 @@ const Title = () => {
 
       <div className="flex gap-x-2 sm:gap-x-3 w-full items-center max-w-6xl">
         <div className="border border-[#FFA500] flex-1"/>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold whitespace-nowrap">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold whitespace-nowrap">
             Meet our <span className="text-[#FFA500]">Team</span>
           </h1>  
         <div className="border border-[#FFA500] flex-1"/>
