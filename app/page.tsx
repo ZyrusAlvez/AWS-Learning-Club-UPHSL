@@ -4,6 +4,7 @@ import Team from "@/component/Team"
 import About from "@/component/About"
 import Contact from "@/component/Contact"
 import Event from "@/component/Event"
+import UpcomingEvent from "@/component/UpcomingEvent"
 
 const Page = () => {
   return (
@@ -12,6 +13,7 @@ const Page = () => {
       <Hero />
       <About />
       <Event />
+      <UpcomingEvent />
       <Team />     
       <Contact />
     </div>
