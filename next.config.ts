@@ -1,11 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // config options here
-  eslint: {
-    // ✅ allow builds even if there are lint errors
-    ignoreDuringBuilds: true,
-  },
+  reactStrictMode: true,
+  // eslint config removed — Next.js 16.0.1 no longer supports this
 };
-
 export default nextConfig;
