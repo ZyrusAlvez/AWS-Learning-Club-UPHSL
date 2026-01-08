@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "./UI/Button"
+import Button from "@/component/UI/Button";
 import SlideShow from "./Hero/SlideShow"
 import { useRouter } from "next/navigation"
 

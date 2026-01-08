@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Card from "./Team/Card"
-import Pagination from "./UI/Pagination";
-import Arrow_Left from "./UI/ArrowLeft";
-import Arrow_Right from "./UI/ArrowRight";
+import Pagination from "@/component/UI/Pagination";
+import ArrowLeft from "./UI/ArrowLeft";
+import ArrowRight from "./UI/ArrowRight";
 import Title from "@/component/Team/Title"
 import { teamMembers } from "@/data/team";
 
@@ -148,8 +148,8 @@ const Team: React.FC = () => {
           onPageChange={handlePaginationClick}
         />
         <div className="flex gap-4 lg:gap-6">
-          <Arrow_Left onClick={prevSlide}/>
-          <Arrow_Right onClick={nextSlide}/>
+          <ArrowLeft onClick={prevSlide}/>
+          <ArrowRight onClick={nextSlide}/>
         </div>
       </div>
     </div>

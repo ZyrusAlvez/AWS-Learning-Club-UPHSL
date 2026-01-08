@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Button from "./UI/Button";
-import TextButton from "./UI/TextButton";
+import Button from "@/component/UI/Button";
+import TextButton from "@/component/UI/TextButton";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
