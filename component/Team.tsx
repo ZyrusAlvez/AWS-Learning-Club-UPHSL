@@ -3,8 +3,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Card from "./Team/Card"
 import Pagination from "@/component/UI/Pagination";
-import ArrowLeft from "./UI/ArrowLeft";
-import ArrowRight from "./UI/ArrowRight";
+import ArrowLeft from "@/component/UI/ArrowLeft";
+import ArrowRight from "@/component/UI/ArrowRight";
 import Title from "@/component/Team/Title"
 import { teamMembers } from "@/data/team";
 
