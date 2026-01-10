@@ -1,6 +1,14 @@
 import { supabase } from "@/lib/supabase";
 
+
 export async function submitMember(formData: any) {
+  
+  // Check if member already exists
+  const existingMember = await findMemberId(formData.schoolEmail);
+  if (existingMember) {
+    throw new Error('You are already a member!');
+  }
+
   const year = new Date().getFullYear().toString();
   const yearSuffix = year.slice(2);
 
@@ -42,4 +50,18 @@ export async function submitMember(formData: any) {
   }
 
   throw new Error("Failed to generate a unique member_id. Try again.");
+}
+
+export async function findMemberId(schoolEmail: string) {
+  const { data, error } = await supabase
+    .from("members")
+    .select("*")
+    .eq("schoolemail", schoolEmail.toLowerCase())
+    .single(); // returns one row or null
+
+  if (error && error.code !== 'PGRST116') { // PGRST116 = no rows found
+    throw error; // only throw if real error
+  }
+
+  return data || null; // return member object or null
 }
