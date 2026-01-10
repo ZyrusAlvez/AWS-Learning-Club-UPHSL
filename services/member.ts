@@ -4,23 +4,32 @@ export async function submitMember(formData: any) {
   const year = new Date().getFullYear().toString();
   const yearSuffix = year.slice(2);
 
-  let member_id: string;
+  let memberid: string;
   let inserted = false;
   let newMember: any;
   let attempts = 0;
 
-  // generate unique member_id
+  // generate unique memberid
   while (!inserted && attempts < 5) { // retry max 5 times
     attempts++;
 
-    const randomNum = Math.floor(Math.random() * 1000).toString().padStart(6, '0');
-    member_id = `aws${yearSuffix}${randomNum}`;
+    const randomNum = Math.floor(Math.random() * 1000).toString().padStart(4, '0');
+    memberid = `aws${yearSuffix}-${randomNum}`;
 
-    newMember = { ...formData, member_id };
+    newMember = {
+      ...formData,
+      memberid
+    };
+
+    // convert all keys to lowercase for Supabase
+    const lowercasedMember: any = {};
+    Object.keys(newMember).forEach(key => {
+      lowercasedMember[key.toLowerCase()] = (newMember as any)[key];
+    });
 
     const { data, error } = await supabase
       .from("members")
-      .insert([newMember]);
+      .insert([lowercasedMember]);
 
     if (!error) {
       inserted = true;
