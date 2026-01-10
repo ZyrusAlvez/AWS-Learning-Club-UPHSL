@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { Toaster } from "sonner";
 import Footer from "@/component/Footer";
 import type { Metadata } from 'next';
 
@@ -20,6 +21,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
+        <Toaster richColors />
         {children}
         <Footer />
       </body>
