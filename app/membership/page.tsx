@@ -28,28 +28,63 @@ const MembershipForm = () => {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // Validate required fields
     const requiredFields = [
       'firstName', 'lastName', 'age', 'contactNumber', 
       'facebookLink', 'personalEmail', 'schoolEmail', 
       'program', 'yearSection'
-    ]
+    ];
     const emptyFields = requiredFields.filter(
       field => !formData[field as keyof typeof formData].trim()
-    )
+    );
 
     if (emptyFields.length > 0) {
-      toast.error('Please fill in all required fields.')
-      return
+      toast.error('Please fill in all required fields.');
+      return;
     }
 
-    setLoading(true)
+    // Validate contact number (digits only, optional + at start)
+    const contactRegex = /^\+?\d{7,15}$/;
+    if (!contactRegex.test(formData.contactNumber)) {
+      toast.error('Please enter a valid contact number (digits only, 7-15 digits).');
+      return;
+    }
+
+    // Validate Facebook link (basic check for facebook.com)
+    const fbRegex = /facebook\.com/i;
+    if (!fbRegex.test(formData.facebookLink)) {
+      toast.error('Please enter a valid Facebook profile link.');
+      return;
+    }
+
+    // Validate age (positive number)
+    const ageNum = parseInt(formData.age, 10);
+    if (isNaN(ageNum) || ageNum <= 0) {
+      toast.error('Please enter a valid age.');
+      return;
+    }
+
+    // Validate personal email (basic email format)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.personalEmail)) {
+      toast.error('Please enter a valid personal email.');
+      return;
+    }
+
+    // Validate school email (must end with @uphsl.edu.ph)
+    const schoolEmailRegex = /^[^\s@]+@uphsl\.edu\.ph$/i;
+    if (!schoolEmailRegex.test(formData.schoolEmail)) {
+      toast.error('Invalid School Email');
+      return;
+    }
+
+    setLoading(true);
 
     try {
-      await submitMember(formData) // call the service function
-      toast.success('Application submitted successfully!')
+      await submitMember(formData); // call the service function
+      toast.success('Application submitted successfully!');
       setFormData({
         firstName: '',
         lastName: '',
@@ -62,13 +97,14 @@ const MembershipForm = () => {
         program: '',
         yearSection: '',
         interest: ''
-      })
+      });
     } catch (err: any) {
-      toast.error(err.message || 'Failed to submit membership.')
+      toast.error(err.message || 'Failed to submit membership.');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
+
 
   return (
     <div className="min-h-screen py-8 px-4 flex flex-col items-center gap-4">
