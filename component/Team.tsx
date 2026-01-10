@@ -18,18 +18,18 @@ const Team: React.FC = () => {
   const updateCardsToShow = useCallback(() => {
     if (window.innerWidth >= 1536) {
       // 2xl
-      setCardsToShow(5);
+      setCardsToShow(6);
     } else if (window.innerWidth >= 1280) {
       // xl
-      setCardsToShow(4);
+      setCardsToShow(5);
     } else if (window.innerWidth >= 1024) {
       // lg
-      setCardsToShow(3);
+      setCardsToShow(4);
     } else if (window.innerWidth >= 640) {
       // sm
-      setCardsToShow(2);
+      setCardsToShow(3);
     } else {
-      setCardsToShow(1);
+      setCardsToShow(2);
     }
   }, []);
 
