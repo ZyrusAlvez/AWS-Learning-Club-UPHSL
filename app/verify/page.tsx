@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { validateMembershipId } from '@/services/member'
 import { toast } from 'sonner'
-import { FaCalendarAlt, FaMapMarkerAlt, FaUser, FaGraduationCap, FaCertificate, FaTools, FaChalkboardTeacher, FaTrophy, FaUsers } from 'react-icons/fa'
+import { FaCalendarAlt, FaMapMarkerAlt, FaUser, FaGraduationCap, FaCertificate, FaTools, FaChalkboardTeacher, FaTrophy, FaUsers, FaFacebook } from 'react-icons/fa'
 
 const VerifyPage = () => {
   const [input, setInput] = useState('')
@@ -132,6 +132,14 @@ const VerifyPage = () => {
                               {hasCertificate ? event.certificate : 'No certificate issued'}
                             </span>
                           </div>
+                          {event.link && (
+                            <div className="mt-3 pt-3 border-t border-white/20">
+                              <a href={event.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#ffa23f] hover:underline">
+                                <FaFacebook />
+                                <span className="text-sm">See more details</span>
+                              </a>
+                            </div>
+                          )}
                         </div>
                       </div>
                     );
