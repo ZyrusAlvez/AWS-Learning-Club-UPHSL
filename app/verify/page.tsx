@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 const VerifyPage = () => {
   const [input, setInput] = useState('')
@@ -35,6 +36,13 @@ const VerifyPage = () => {
             Verify
           </button>
         </div>
+        
+        <p className="text-white/70 text-sm">
+          Don't know your membership ID?{' '}
+          <Link href="/find-membership-id" className="text-[#ffa23f] hover:underline">
+            Click here
+          </Link>
+        </p>
       </div>
     </div>
   )
