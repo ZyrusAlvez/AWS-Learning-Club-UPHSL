@@ -45,7 +45,7 @@ const VerifyPage = () => {
           <span className='text-[#ffa23f] font-extrabold'>Verify</span> Certificate or Membership
         </h1>
         <p className="text-white/80 text-sm md:text-base">
-          Enter your certificate reference number or membership ID
+          Enter your certificate ID or membership ID
         </p>
         
         <div className="flex flex-col sm:flex-row gap-3 mt-8">
@@ -53,7 +53,7 @@ const VerifyPage = () => {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Enter reference number or membership ID"
+            placeholder="Enter certificate ID or membership ID"
             className="flex-1 px-4 py-3 bg-white/20 border border-white/30 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#ffa23f]"
           />
           <button
