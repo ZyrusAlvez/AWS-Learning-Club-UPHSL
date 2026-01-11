@@ -93,8 +93,11 @@ const page = () => {
 
             <section className="mb-8">
               <h2 className="text-2xl text-[#ffa23f] mb-4">Disposal</h2>
-              <p className="text-gray-700">
+              <p className="text-gray-700 mb-4">
                 Physical records containing personal data shall be disposed of through secure shredding. Digital records shall be permanently deleted or rendered irretrievable using appropriate technical methods. In all instances, disposal procedures are implemented to prevent unauthorized access or recovery of personal data.
+              </p>
+              <p className="text-gray-700">
+                All member data will be deleted at the end of every academic year to ensure data minimization and compliance with retention policies.
               </p>
             </section>
 
