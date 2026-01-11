@@ -115,6 +115,11 @@ export async function validateMembershipId(memberid: string) {
             ...event,
             certificate: attendance?.certificate || 'No certificate issued'
           };
+        })
+        .sort((a, b) => {
+          const dateA = new Date(a.date || 0).getTime();
+          const dateB = new Date(b.date || 0).getTime();
+          return dateB - dateA;
         });
     }
   }
