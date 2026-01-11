@@ -31,7 +31,7 @@ export const events: Event[] = [
   {
     title: "Zero to 10X Developer",
     subtitle:
-      "A hands-on developer event designed to help students strengthen their programming skills. Sessions focus on practical development workflows, problem-solving, and career growth to prepare participants for real-world software projects.",
+      "A hands-on developer event designed to help students strengthen their programming skills with Amazon Q. Sessions focus on practical development workflows, problem-solving, and career growth to prepare participants for real-world software projects.",
     date: "October 2025",
     location: "Arthaland Century Pacific Tower, BGC",
     type: EventType.WORKSHOP,
@@ -58,7 +58,7 @@ export const events: Event[] = [
   {
     title: "Ideathon 2025",
     subtitle:
-      "A competitive ideation event where students collaborate to solve real-world challenges. Participants develop, refine, and pitch innovative ideas, building skills in creativity, teamwork, and problem solving.",
+      "A competitive ideation event where students collaborate to solve real-world challenges using AWS solutions and architecture. Participants develop, refine, and pitch innovative ideas, building skills in creativity, teamwork, and problem solving.",
     date: "April 2025",
     location: "Macintosh Laboratory, UPHSL",
     type: EventType.COMPETITION,
