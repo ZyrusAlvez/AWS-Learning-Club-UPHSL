@@ -84,7 +84,7 @@ const MembershipForm = () => {
 
     try {
       await submitMember(formData); // call the service function
-      toast.success('Application submitted successfully!');
+      toast.success('Your membership ID has been sent to your school email.');
       setFormData({
         firstName: '',
         lastName: '',
