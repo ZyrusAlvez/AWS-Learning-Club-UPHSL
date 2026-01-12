@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { validateMembershipId } from '@/services/member'
+import { validateCertificate } from '@/services/certificate'
 import { toast } from 'sonner'
 import { FaCalendarAlt, FaMapMarkerAlt, FaUser, FaGraduationCap, FaCertificate, FaTools, FaChalkboardTeacher, FaTrophy, FaUsers, FaFacebook } from 'react-icons/fa'
 
@@ -20,7 +21,7 @@ const VerifyPage = () => {
 
   const handleVerify = async () => {
     if (!input.trim()) {
-      toast.error('Please enter a membership ID')
+      toast.error('Please enter a membership ID or certificate ID')
       return
     }
 
@@ -28,11 +29,20 @@ const VerifyPage = () => {
     setResult(null)
 
     try {
-      const data = await validateMembershipId(input)
-      setResult(data)
-      toast.success('Membership verified!')
+      // Check if input starts with 'aws' (case-insensitive)
+      if (input.toLowerCase().startsWith('aws')) {
+        // Validate membership ID
+        const data = await validateMembershipId(input)
+        setResult({ type: 'membership', data })
+        toast.success('Membership verified!')
+      } else {
+        // Validate certificate
+        const data = await validateCertificate(input)
+        setResult({ type: 'certificate', data })
+        toast.success('Certificate verified!')
+      }
     } catch (error: any) {
-      toast.error(error.message || 'Failed to verify membership')
+      toast.error(error.message || 'Verification failed')
     } finally {
       setLoading(false)
     }
@@ -72,23 +82,23 @@ const VerifyPage = () => {
           </Link>
         </p>
 
-        {result && (
+        {result && result.type === 'membership' && (
           <div className="mt-12 space-y-8">
             {/* Profile Section */}
             <div className="border-2 border-[#ffa23f] bg-[#ffa23f]/20 rounded-xl p-8 backdrop-blur-sm text-left">
               <div className="space-y-3">
                 <div>
                   <p className="text-white text-sm uppercase mb-1">Name</p>
-                  <p className="text-white text-2xl font-bold">{result.member.firstname} {result.member.middlename} {result.member.lastname}</p>
+                  <p className="text-white text-2xl font-bold">{result.data.member.firstname} {result.data.member.middlename} {result.data.member.lastname}</p>
                 </div>
                 <div>
                   <p className="text-white text-sm uppercase mb-1">Program</p>
-                  <p className="text-[#ffa23f] text-lg font-semibold">{result.member.program}</p>
+                  <p className="text-[#ffa23f] text-lg font-semibold">{result.data.member.program}</p>
                 </div>
-                {result.member.position && result.member.position.toLowerCase() !== 'member' && (
+                {result.data.member.position && result.data.member.position.toLowerCase() !== 'member' && (
                   <div>
                     <p className="text-white text-sm uppercase mb-1">Position</p>
-                    <p className="text-white text-lg font-semibold">{result.member.position}</p>
+                    <p className="text-white text-lg font-semibold">{result.data.member.position}</p>
                   </div>
                 )}
               </div>
@@ -97,9 +107,9 @@ const VerifyPage = () => {
             {/* Events Section */}
             <div>
               <h2 className="text-2xl font-bold text-white mb-6">Events Attended</h2>
-              {result.events.length > 0 ? (
+              {result.data.events.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {result.events.map((event: any, index: number) => {
+                  {result.data.events.map((event: any, index: number) => {
                     const eventType = event.type?.toLowerCase() || 'workshop';
                     const config = eventTypeConfig[eventType] || eventTypeConfig.workshop;
                     const TypeIcon = config.icon;
@@ -150,6 +160,53 @@ const VerifyPage = () => {
                   <p className="text-white">No events attended yet</p>
                 </div>
               )}
+            </div>
+          </div>
+        )}
+
+        {result && result.type === 'certificate' && (
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">Certificate Details</h2>
+            <div className="max-w-2xl mx-auto">
+              {(() => {
+                const event = result.data;
+                const eventType = event.type?.toLowerCase() || 'workshop';
+                const config = eventTypeConfig[eventType] || eventTypeConfig.workshop;
+                const TypeIcon = config.icon;
+                
+                return (
+                  <div className={`border-2 ${config.color} rounded-xl p-8 backdrop-blur-sm`}>
+                    <div className="flex items-center gap-2 mb-4">
+                      <TypeIcon className="text-[#ffa23f] text-xl" />
+                      <span className="text-sm font-semibold text-white uppercase">{config.label}</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white mb-4">{event.name || event.title || event.eventname}</h3>
+                    {event.description && <p className="text-white text-base mb-6">{event.description}</p>}
+                    <div className="space-y-3 text-base text-white">
+                      {event.date && (
+                        <div className="flex items-center gap-3">
+                          <FaCalendarAlt className="text-[#ffa23f] text-lg" />
+                          <span>{event.date}</span>
+                        </div>
+                      )}
+                      {event.location && (
+                        <div className="flex items-center gap-3">
+                          <FaMapMarkerAlt className="text-[#ffa23f] text-lg" />
+                          <span>{event.location}</span>
+                        </div>
+                      )}
+                      {event.link && (
+                        <div className="mt-6 pt-6 border-t border-white/20">
+                          <a href={event.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#ffa23f] hover:underline text-lg">
+                            <FaFacebook />
+                            <span>See more details</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
           </div>
         )}
