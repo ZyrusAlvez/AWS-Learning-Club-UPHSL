@@ -122,6 +122,11 @@ const MembershipForm = () => {
                 <p className="text-white/80">I’m excited to invite you to officially join the Amazon Web Services (AWS) Learning Club — a space where we grow our cloud knowledge and collaborate with fellow learners and enthusiasts! </p>
                 <p className="text-white/80 mt-4">To get started, please fill in the information below. Let’s build the future of cloud learning together. See you in the club! ☁️🚀</p>
                 <p className="text-white mt-2 text-end">- Awie</p>
+                <div className="mt-6 p-4 bg-[#ffa23f]/20 border border-[#ffa23f]/50 rounded-md">
+                  <p className="text-white/90 text-sm">
+                    📧 <span className="font-semibold">This form will generate your membership ID</span> and it will be sent to your school email. Your membership ID will be used for tracking your involvement in the community, registering for future events, giveaways, discounts for AWSLC merch, and more to come.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
