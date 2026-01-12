@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { submitMember } from '@/services/member'
-import { toast } from 'sonner' 
+import { toast } from 'sonner'
 
 const MembershipForm = () => {
   const [formData, setFormData] = useState({
