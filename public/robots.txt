@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://awslc.uphsl.edu.ph/sitemap.xml

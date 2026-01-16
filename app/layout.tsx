@@ -2,10 +2,9 @@ import "../styles/globals.css";
 import { Toaster } from "sonner";
 import Footer from "@/component/Footer";
 import type { Metadata } from 'next';
-import Script from 'next/script';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://awslearningclub.uphsl.edu.ph'),
+  metadataBase: new URL('https://awslc.uphsl.edu.ph'),
   title: {
     default: 'AWS Learning Club - UPHSL | Amazon Web Services Student Community',
     template: '%s | AWS Learning Club - UPHSL'
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_PH',
-    url: 'https://awslearningclub.uphsl.edu.ph',
+    url: 'https://awslc.uphsl.edu.ph',
     siteName: 'AWS Learning Club - UPHSL',
     title: 'AWS Learning Club - UPHSL | Amazon Web Services Student Community',
     description: 'Official AWS Learning Club at University of Perpetual Help System Laguna. Join our cloud computing community and learn AWS services.',
@@ -82,7 +81,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://awslearningclub.uphsl.edu.ph',
+    canonical: 'https://awslc.uphsl.edu.ph',
   },
 };
 
@@ -92,8 +91,8 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     "@type": "Organization",
     "name": "AWS Learning Club - UPHSL",
     "alternateName": "AWSLC UPHSL",
-    "url": "https://awslearningclub.uphsl.edu.ph",
-    "logo": "https://awslearningclub.uphsl.edu.ph/awslc logo.webp",
+    "url": "https://awslc.uphsl.edu.ph",
+    "logo": "https://awslc.uphsl.edu.ph/awslc logo.webp",
     "description": "Official AWS Learning Club at University of Perpetual Help System Laguna",
     "email": "awslc.uphsl@gmail.com",
     "address": {
@@ -133,8 +132,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <Script
-          id="organization-schema"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
