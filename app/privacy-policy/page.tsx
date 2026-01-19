@@ -18,7 +18,7 @@ const page = () => {
             </p>
 
             <p className="leading-relaxed mb-8">
-              This Privacy Policy describes how AWSLC collects, uses, stores, shares, and protects personal data obtained through membership registration, event participation, and related activities conducted through <a href="https://awslearningclub.uphsl.edu.ph" className="text-blue-600 hover:underline">https://awslearningclub.uphsl.edu.ph</a> ("Website") and official forms administered by duly authorized AWSLC officers.
+              This Privacy Policy describes how AWSLC collects, uses, stores, shares, and protects personal data obtained through membership registration, event participation, and related activities conducted through <a href="https://awslc.uphsl.edu.ph" className="text-blue-600 hover:underline">https://awslc.uphsl.edu.ph</a> ("Website") and official forms administered by duly authorized AWSLC officers.
             </p>
 
             <section className="mb-8">
