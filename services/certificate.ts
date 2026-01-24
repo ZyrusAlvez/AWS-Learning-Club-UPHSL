@@ -1,15 +1,13 @@
 import { supabase } from "@/lib/supabase";
 
 export async function validateCertificate(certificate: string) {
-  // Check if certificate is not "No certificate issued"
   if (certificate === 'No certificate issued') {
     throw new Error('Invalid certificate');
   }
 
-  // Find attendance record by certificate
   const { data: attendance, error: attendanceError } = await supabase
     .from("attendance")
-    .select("eventid")
+    .select("eventid, memberid")
     .eq("certificate", certificate)
     .single();
 
@@ -17,7 +15,6 @@ export async function validateCertificate(certificate: string) {
     throw new Error('Certificate not found');
   }
 
-  // Find event by eventid
   const { data: event, error: eventError } = await supabase
     .from("events")
     .select("*")
@@ -28,5 +25,17 @@ export async function validateCertificate(certificate: string) {
     throw new Error('Event not found');
   }
 
-  return event;
+  const { data: member, error: memberError } = await supabase
+    .from("members")
+    .select("firstname, lastname, middlename")
+    .eq("id", attendance.memberid)
+    .single();
+
+  if (memberError || !member) {
+    throw new Error('Member not found');
+  }
+
+  const ownerName = `${member.firstname} ${member.middlename} ${member.lastname}`;
+
+  return { event, ownerName };
 }
