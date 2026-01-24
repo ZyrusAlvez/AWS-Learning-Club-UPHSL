@@ -167,9 +167,19 @@ const VerifyPage = () => {
         {result && result.type === 'certificate' && (
           <div className="mt-12">
             <h2 className="text-2xl font-bold text-white mb-6 text-center">Certificate Details</h2>
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto space-y-6">
+              {/* Owner Section */}
+              <div className="border-2 border-[#ffa23f] bg-[#ffa23f]/20 rounded-xl p-6 backdrop-blur-sm">
+                <div className="flex items-center gap-3 mb-2">
+                  <FaUser className="text-[#ffa23f] text-xl" />
+                  <span className="text-sm font-semibold text-white uppercase">Certificate Owner</span>
+                </div>
+                <p className="text-white text-2xl font-bold">{result.data.ownerName}</p>
+              </div>
+
+              {/* Event Section */}
               {(() => {
-                const event = result.data;
+                const event = result.data.event;
                 const eventType = event.type?.toLowerCase() || 'workshop';
                 const config = eventTypeConfig[eventType] || eventTypeConfig.workshop;
                 const TypeIcon = config.icon;
