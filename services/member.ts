@@ -21,7 +21,7 @@ export async function submitMember(formData: any) {
   while (!inserted && attempts < 5) { // retry max 5 times
     attempts++;
 
-    const randomNum = Math.floor(Math.random() * 1000).toString().padStart(4, '0');
+    const randomNum = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
     memberid = `aws${yearSuffix}-${randomNum}`;
 
     newMember = {
