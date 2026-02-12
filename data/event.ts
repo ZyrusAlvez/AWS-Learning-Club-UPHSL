@@ -11,6 +11,22 @@ type Event = {
 
 export const events: Event[] = [
   {
+    title: "ChainTalk 2026",
+    subtitle: "A seminar for tech students highlighting cryptocurrency and blockchain technology, featuring industry professionals.",
+    date: "February 5, 2026",
+    location: "Performing Arts Theater, UPHSL",
+    type: EventType.SEMINAR,
+    pictures: "/event/ChainTalk2026",
+  },
+  {
+    title: "Data Analytics Workshop",
+    subtitle: "A 3-week mentored program by a Professional Data Analyst covering data cleaning, visualization with PowerBI, and business insights interpretation.",
+    date: "January 28, 2026",
+    location: "AWS Discord Server",
+    type: EventType.WORKSHOP,
+    pictures: "/event/DAW",
+  },
+  {
     title: "Meet Magento Philippines",
     subtitle:
       "A major ecommerce conference bringing together students, developers, and industry professionals to explore modern online commerce. The event features expert talks, technical sessions, and real-world case studies focused on Magento, Adobe Commerce, and digital business growth.",
